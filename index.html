@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Love Quest</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ESCENA 1 -->
+  <div id="title-screen" class="scene active">
+    <div id="title-stars-bg"></div>
+    <div id="title-floating"></div>
+    <div class="title-content">
+      <h1 class="game-title">PIXEL VAL</h1>
+      <p class="subtitle">Toca todo lo que brille...</p>
+      <button id="btn-start" class="pixel-btn">Empezar</button>
+    </div>
+  </div>
+
+  <!-- ESCENA 2 -->
+  <div id="game-screen" class="scene">
+    <div id="hud">
+      <span class="hud-heart">&#10084;</span>
+      <span id="hud-count">0</span>
+    </div>
+
+    <!-- CIELO -->
+    <div class="game-sky" id="game-sky">
+      <!-- Luna -->
+      <div id="moon" class="clickable-memory" data-msg="Iluminas mi vida">
+        <div class="moon-body"></div>
+        <div class="moon-crater c1"></div>
+        <div class="moon-crater c2"></div>
+        <div class="glow-hint"></div>
+      </div>
+      <!-- Saturno -->
+      <div id="saturn" class="clickable-memory" data-msg="Siempre nuestro">
+        <div class="saturn-body"></div>
+        <div class="saturn-ring"></div>
+        <div class="glow-hint"></div>
+      </div>
+      <!-- Nubes -->
+      <div class="cloud cl1"></div>
+      <div class="cloud cl2"></div>
+      <div class="cloud cl3"></div>
+      <!-- Estrellas -->
+      <div id="sky-stars-container"></div>
+      <!-- Estrella fugaz -->
+      <div id="shooting-star" class="clickable-memory" data-msg="TE AMO MILES DE ANOS LUZ" data-special="true">
+        <div class="shooting-star-body"></div>
+        <div class="shooting-star-tail"></div>
+      </div>
+      <!-- Mariposas -->
+      <div id="butterfly1" class="butterfly clickable-memory" data-msg="Atrapaste una de las mariposas que siento cuando estoy contigo">
+        <div class="bfly-wing left"></div>
+        <div class="bfly-body"></div>
+        <div class="bfly-wing right"></div>
+        <div class="glow-hint"></div>
+      </div>
+      <div id="butterfly2" class="butterfly clickable-memory" data-msg="Atrapaste una de las mariposas que siento cuando estoy contigo">
+        <div class="bfly-wing left"></div>
+        <div class="bfly-body"></div>
+        <div class="bfly-wing right"></div>
+        <div class="glow-hint"></div>
+      </div>
+    </div>
+
+    <!-- SUELO -->
+    <div class="game-ground">
+      <!-- Arbol -->
+      <div id="tree">
+        <div class="tree-crown"></div>
+        <div class="tree-crown-top"></div>
+        <div class="tree-trunk"></div>
+      </div>
+      <!-- Arbol 2 -->
+      <div id="tree2">
+        <div class="tree-crown"></div>
+        <div class="tree-crown-top"></div>
+        <div class="tree-trunk"></div>
+      </div>
+
+      <!-- Trebol 4 hojas -->
+      <div id="clover" class="clickable-memory" data-msg="Lo dejo para quien lo necesite, mi suerte yo ya la tuve contigo">
+        <div class="clover-leaf cl-tl"></div>
+        <div class="clover-leaf cl-tr"></div>
+        <div class="clover-leaf cl-bl"></div>
+        <div class="clover-leaf cl-br"></div>
+        <div class="clover-stem"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Mesa con mapa -->
+      <div id="map-table" class="clickable-memory" data-msg="Mi unico camino en el mapa eres tu">
+        <div class="table-top"></div>
+        <div class="table-leg tl-l"></div>
+        <div class="table-leg tl-r"></div>
+        <div class="map-paper"></div>
+        <div class="map-x"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Libro -->
+      <div id="book" class="clickable-memory" data-msg="Quiero aprender a leerte y entenderte siempre">
+        <div class="book-cover"></div>
+        <div class="book-pages"></div>
+        <div class="book-spine"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Pizza -->
+      <div id="pizza" class="clickable-memory" data-msg="Disfrutemos miles de pizzas calientitas mas juntos!">
+        <div class="pizza-base"></div>
+        <div class="pizza-pep p1"></div>
+        <div class="pizza-pep p2"></div>
+        <div class="pizza-pep p3"></div>
+        <div class="pizza-pep p4"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Gatito (camina y duerme) -->
+      <div id="cat" class="clickable-memory" data-msg="Hola, Alex te ama! miaaau">
+        <div class="cat-body"></div>
+        <div class="cat-head"></div>
+        <div class="cat-ear ear-l"></div>
+        <div class="cat-ear ear-r"></div>
+        <div class="cat-tail"></div>
+        <div class="cat-zzz">z</div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Perrito Ruti (camina y duerme) -->
+      <div id="pom" class="clickable-memory" data-msg="Hola. Soy Ruti!">
+        <div class="pom-body"></div>
+        <div class="pom-head"></div>
+        <div class="pom-ear ear-l"></div>
+        <div class="pom-ear ear-r"></div>
+        <div class="pom-tail"></div>
+        <div class="pom-zzz">z</div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Conejo -->
+      <div id="bunny" class="clickable-memory" data-msg="Gracias por no rendirnos">
+        <div class="bunny-ear ear-l"></div>
+        <div class="bunny-ear ear-r"></div>
+        <div class="bunny-body"></div>
+        <div class="bunny-tail"></div>
+        <div class="bunny-eye"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Casa -->
+      <div id="house">
+        <div class="house-roof"></div>
+        <div class="house-wall"></div>
+        <div id="house-door" class="clickable-memory" data-msg="Contigo me siento en casa">
+          <div class="door-knob"></div>
+          <div class="glow-hint"></div>
+        </div>
+        <div class="house-window hw-l"><div class="win-glow"></div></div>
+        <div class="house-window hw-r"><div class="win-glow"></div></div>
+      </div>
+
+      <!-- Buzon -->
+      <div id="mailbox" class="clickable-memory" data-msg="Amo amarte">
+        <div class="mailbox-box"></div>
+        <div class="mailbox-flag"></div>
+        <div class="mailbox-post"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Farol -->
+      <div id="lantern" class="clickable-memory" data-msg="Amo cuidarte">
+        <div class="lantern-post"></div>
+        <div class="lantern-light"></div>
+        <div class="lantern-glow"></div>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Corazon flotante -->
+      <div id="float-heart" class="clickable-memory" data-msg="Amo tu dulzura">
+        <span class="float-heart-icon">&#10084;</span>
+        <div class="glow-hint"></div>
+      </div>
+
+      <!-- Flores (generadas por JS, TODAS clickeables) -->
+      <div id="flower-garden"></div>
+
+      <!-- Nubes bajas -->
+      <div class="ground-cloud gc1"></div>
+      <div class="ground-cloud gc2"></div>
+    </div>
+
+    <!-- Popup normal -->
+    <div id="memory-popup" class="popup hidden">
+      <div class="popup-content">
+        <p id="popup-text"></p>
+        <button id="popup-close" class="pixel-btn pixel-btn-sm">&#10084;</button>
+      </div>
+    </div>
+
+    <!-- Popup especial (estrella fugaz) -->
+    <div id="special-popup" class="special-popup hidden">
+      <div class="special-popup-content">
+        <p class="special-text">TE AMO<br>MILES DE ANOS LUZ</p>
+        <div class="special-heart">&#10084;</div>
+        <button id="special-close" class="pixel-btn pixel-btn-sm">&#10084;</button>
+      </div>
+    </div>
+
+    <!-- Star popup -->
+    <div id="star-popup" class="star-popup hidden">
+      <div class="star-popup-heart">&#10084;</div>
+      <div class="star-popup-text">Babi y Alex</div>
+    </div>
+
+    <!-- Valentine finale overlay -->
+    <div id="valentine-overlay" class="valentine-overlay hidden">
+      <div class="valentine-heart" id="valentine-heart">&#10084;</div>
+      <div class="valentine-msg" id="valentine-msg">
+        <p>Quiero que seas este y todos los<br>Valentine's Day de mi vida</p>
+        <p class="valentine-sign">Babi y Alex</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESCENA 3 -->
+  <div id="final-screen" class="scene">
+    <div id="final-stars"></div>
+    <div class="final-content">
+      <h2 class="final-title">LEVEL COMPLETE <span class="final-heart">&#10084;</span></h2>
+      <p class="final-text">Has encontrado todas las razones...<br>pero en realidad son infinitas.</p>
+      <p class="final-subtext">Babi y Alex &#10084; por siempre</p>
+      <button id="btn-continue" class="pixel-btn pixel-btn-final">Volver a jugar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
